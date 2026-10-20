@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/better-interpretation/static/css/main.6ad27321.css",
+    "main.js": "/better-interpretation/static/js/main.1898f71b.js",
+    "index.html": "/better-interpretation/index.html",
+    "main.6ad27321.css.map": "/better-interpretation/static/css/main.6ad27321.css.map",
+    "main.1898f71b.js.map": "/better-interpretation/static/js/main.1898f71b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ad27321.css",
+    "static/js/main.1898f71b.js"
+  ]
+}
