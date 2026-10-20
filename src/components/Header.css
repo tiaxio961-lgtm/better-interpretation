@@ -1,0 +1,31 @@
+
+.site-header {
+    width: 85%;
+    margin: auto;
+    border-bottom: 1px solid #d9e1eb;
+    background: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    color: #49688f;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 15px 0;
+}
+
+@media (max-width: 800px) {
+    .site-header {
+        width: 90%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding-bottom: 15px;
+    }
+}
