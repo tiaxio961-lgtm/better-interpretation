@@ -1,0 +1,134 @@
+:root {
+    --primary-blue: #49688f;
+    --light-blue: #87a4cc;
+    --border-blue: #d9e1eb;
+    --white: #ffffff;
+    --black: #111111;
+    --button-blue: #1687e8;
+}
+.basics-page {
+    max-width: 1000px;
+    padding: 40px 25px;
+}
+
+.basics-page .page-title {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    text-align: center;
+    padding: 18px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.basics-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.basics-intro p {
+    color: var(--primary-blue);
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+/* Three Basic Steps */
+
+.basic-steps {
+    border: 1px solid var(--border-blue);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.basic-steps > h2 {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+}
+
+.steps-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 35px;
+}
+
+.steps-text {
+    flex: 1;
+}
+
+.step {
+    margin-bottom: 30px;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step h3 {
+    color: var(--primary-blue);
+    font-size: 21px;
+    margin: 0 0 8px;
+}
+
+.step p {
+    color: var(--light-blue);
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.steps-content img {
+    width: 350px;
+    max-width: 40%;
+    border: 5px solid #8caf98;
+    padding: 6px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Remember */
+
+.basics-remember {
+    border: 1px solid var(--border-blue);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.basics-remember h2 {
+    color: var(--primary-blue);
+    text-align: center;
+    margin-top: 0;
+}
+
+.basics-remember p {
+    color: var(--primary-blue);
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Smaller Screens */
+
+@media (max-width: 800px) {
+    .basics-page {
+        padding: 30px 0;
+    }
+
+    .steps-content {
+        flex-direction: column;
+    }
+
+    .steps-content img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .step {
+        text-align: center;
+    }
+}

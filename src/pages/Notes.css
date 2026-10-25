@@ -1,0 +1,198 @@
+
+.notes-page {
+    max-width: 1000px;
+    padding: 40px 25px;
+}
+
+.notes-page .page-title {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    text-align: center;
+    padding: 18px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+/* Note-Taking Intro */
+
+.notes-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--white);
+    border: 1px solid var(--border-blue);
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.notes-intro-text {
+    flex: 1;
+}
+
+.notes-intro-text p {
+    color: var(--primary-blue);
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 25px;
+}
+
+.notes-intro img {
+    width: 300px;
+    max-width: 40%;
+}
+
+/* Why Take Notes */
+
+.why-notes {
+    border: 1px solid var(--border-blue);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.why-notes h2 {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+}
+
+.why-notes-content {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 35px;
+}
+
+.note-icon {
+    color: var(--button-blue);
+    font-size: 70px;
+    padding: 25px;
+}
+
+.why-notes-content p {
+    color: var(--primary-blue);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Note-Taking Example */
+
+.note-example {
+    border: 1px solid var(--border-blue);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.note-example h2 {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    text-align: center;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.example-info {
+    color: var(--primary-blue);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 20px auto 30px;
+}
+
+.example-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.example-card {
+    flex: 1;
+    text-align: center;
+    border: 2px solid var(--border-blue);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.example-card h3 {
+    background: var(--border-blue);
+    color: var(--primary-blue);
+    margin: 0;
+    padding: 15px;
+}
+
+.example-card p {
+    color: var(--primary-blue);
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.example-card img {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.short-notes {
+    font-weight: bold;
+}
+
+.example-arrow {
+    color: var(--button-blue);
+    font-size: 55px;
+    font-weight: bold;
+}
+
+/* Green Image Frames */
+
+.notes-intro img,
+.example-card img {
+    border: 5px solid #8caf98;
+    padding: 6px;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Smaller Screens */
+
+@media (max-width: 800px) {
+    .notes-page {
+        padding: 30px 0;
+    }
+
+    .notes-page .page-title {
+        font-size: 28px;
+    }
+
+    .notes-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .notes-intro img {
+        width: 250px;
+        max-width: 100%;
+    }
+
+    .why-notes-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .example-row {
+        flex-direction: column;
+    }
+
+    .example-arrow {
+        transform: rotate(90deg);
+    }
+
+    .example-card {
+        width: 100%;
+    }
+}
