@@ -136,3 +136,14 @@
         padding: 20px;
     }
 }
+/* Part 10: React Tooltip */
+.practice-help {
+    color: #49688f;
+    font-weight: bold;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+.practice-help:hover {
+    color: #8caf98;
+}

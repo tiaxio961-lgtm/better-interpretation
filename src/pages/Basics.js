@@ -63,6 +63,25 @@ const Basics = () => {
                 <p>Deliver the same complete message.</p>
             </section>
 
+        
+{/* Part 10: Embedded educational video */}
+<section className="basics-video">
+    <h2>Learn More About Interpreting</h2>
+
+    <p>
+        Watch this video to learn more about interpreting
+        and how communication works between languages.
+    </p>
+
+    <iframe
+    src="https://www.youtube.com/embed/igMRX1dV3fQ?start=188"
+    title="Interpreting Educational Video"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allowFullScreen
+></iframe>
+</section>
+
         </main>
     );
 };

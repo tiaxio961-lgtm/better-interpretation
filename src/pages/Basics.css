@@ -1,3 +1,4 @@
+
 :root {
     --primary-blue: #49688f;
     --light-blue: #87a4cc;
@@ -6,8 +7,13 @@
     --black: #111111;
     --button-blue: #1687e8;
 }
+
+/* Basics Page */
+
 .basics-page {
+    width: 90%;
     max-width: 1000px;
+    margin: 0 auto;
     padding: 40px 25px;
 }
 
@@ -19,6 +25,8 @@
     border-radius: 20px;
     margin-bottom: 30px;
 }
+
+/* Introduction */
 
 .basics-intro {
     text-align: center;
@@ -90,7 +98,7 @@
     border-radius: 8px;
 }
 
-/* Remember */
+/* Remember Section */
 
 .basics-remember {
     border: 1px solid var(--border-blue);
@@ -112,10 +120,43 @@
     line-height: 1.5;
 }
 
+/* Part 10: Educational Video Iframe */
+
+.basics-video {
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: #eef4f0;
+    border: 2px solid #8caf98;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.basics-video h2 {
+    color: #49688f;
+    font-size: 28px;
+}
+
+.basics-video p {
+    color: #49688f;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.basics-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 12px;
+}
+
 /* Smaller Screens */
 
 @media (max-width: 800px) {
     .basics-page {
+        width: 90%;
         padding: 30px 0;
     }
 
@@ -130,5 +171,13 @@
 
     .step {
         text-align: center;
+    }
+
+    .basics-video {
+        padding: 20px 15px;
+    }
+
+    .basics-video h2 {
+        font-size: 23px;
     }
 }

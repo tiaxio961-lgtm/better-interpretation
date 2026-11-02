@@ -239,3 +239,9 @@
         font-size: 21px;
     }
 }
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
