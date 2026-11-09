@@ -10,17 +10,27 @@ const Practice = () => {
     const [exercises, setExercises] = useState([]);
     const [level, setLevel] = useState("Easy");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(process.env.PUBLIC_URL + "/practice.json")
+        fetch("https://hello-world-server-q0ic.onrender.com/api/practice")
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Could not load exercises.");
                 }
                 return response.json();
             })
-            .then((data) => setExercises(data))
-            .catch(() => setError("Unable to load practice exercises."));
+            .then((data) => {
+                setExercises(data);
+                setError("");
+            })
+            .catch((err) => {
+                console.error("Error loading exercises:", err);
+                setError("Unable to load practice exercises.");
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, []);
 
     const filteredExercises = exercises.filter(
@@ -37,11 +47,11 @@ const Practice = () => {
                 <h2>Take notes as quickly as possible!</h2>
 
                 <p>
-                    Try to write down the important information without writing
-                    every single word. Start with easy and work your way up.
+                    Try to write down the important information
+                    without writing every single word.
+                    Start with easy and work your way up.
                 </p>
 
-                {/* Part 10: React Library #2 - React Tooltip */}
                 <p>
                     <span
                         className="practice-help"
@@ -57,35 +67,51 @@ const Practice = () => {
             </section>
 
             <div className="level-buttons">
-                <button onClick={() => setLevel("Easy")}>
+                <button
+                    className={level === "Easy" ? "active" : ""}
+                    onClick={() => setLevel("Easy")}
+                >
                     Easy
                 </button>
 
-                <button onClick={() => setLevel("Normal")}>
+                <button
+                    className={level === "Normal" ? "active" : ""}
+                    onClick={() => setLevel("Normal")}
+                >
                     Normal
                 </button>
 
-                <button onClick={() => setLevel("Hard")}>
+                <button
+                    className={level === "Hard" ? "active" : ""}
+                    onClick={() => setLevel("Hard")}
+                >
                     Hard
                 </button>
             </div>
 
             <div id="practice-list">
-                {error && <p>{error}</p>}
-
-                {!error && exercises.length === 0 && (
+                {loading && (
                     <p>Loading practice exercises...</p>
                 )}
 
-                {filteredExercises.map((exercise) => (
-                    <PracticeExercise
-                        key={exercise._id}
-                        exercise={exercise}
-                    />
-                ))}
+                {error && (
+                    <p className="error-message">{error}</p>
+                )}
+
+                {!loading && !error && filteredExercises.length === 0 && (
+                    <p>No exercises available for this level.</p>
+                )}
+
+                {!loading && !error &&
+                    filteredExercises.map((exercise) => (
+                        <PracticeExercise
+                            key={exercise._id}
+                            exercise={exercise}
+                        />
+                    ))
+                }
             </div>
 
-            {/* Part 10: Contact Form + React Hot Toast */}
             <ContactForm />
         </main>
     );
