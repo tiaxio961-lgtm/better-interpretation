@@ -1,149 +1,255 @@
 
-.practice-page {
-    max-width: 1000px;
-    padding: 40px 25px 80px;
-}
+/* ===================================
+   Part 12 - Practice Page Additions
+   Matches Original Blue & Green Theme
+=================================== */
 
-.practice-page .page-title {
-    background: var(--border-blue);
-    color: var(--primary-blue);
-    text-align: center;
-    padding: 18px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-}
+/* Practice Cards */
 
-/* Practice Intro */
-
-.practice-intro {
-    text-align: center;
+.practice-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 850px;
     margin: 30px auto;
-    max-width: 750px;
 }
 
-.practice-intro h2 {
-    color: var(--primary-blue);
-    font-size: 26px;
+.practice-clickable-card {
+    background: #ffffff;
+    border: 3px solid #8caf98;
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 0;
 }
 
-.practice-intro p {
-    color: var(--light-blue);
-    font-size: 17px;
-    line-height: 1.6;
+.practice-clickable-card .practice-level {
+    border: none;
+    padding: 10px;
+    margin: 0;
 }
 
-/* Level Buttons */
-
-.level-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 40px 0;
+.practice-clickable-card img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.level-buttons button {
+.practice-card-open {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
     background: #8caf98;
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 12px 30px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
 }
 
-/* Practice Exercises */
-
-.practice-level {
-    border: 3px solid #8caf98;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 800px;
-    margin: 0 auto 25px;
+.practice-card-open:hover {
+    background: #719b80;
 }
 
-.practice-level h2 {
-    color: var(--primary-blue);
-    text-align: center;
-}
+/* Active Difficulty Button */
 
-.practice-text {
-    color: var(--primary-blue);
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.practice-image {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 20px auto;
-    border: 3px solid #8caf98;
-    border-radius: 8px;
-}
-
-/* Show Notes Button */
-
-.notes-button {
-    display: block;
-    margin: 25px auto 10px;
+.level-buttons button.active {
     background: var(--primary-blue);
     color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 12px 22px;
-    font-size: 16px;
-    cursor: pointer;
+    font-weight: bold;
 }
 
-/* Important Notes */
+.level-buttons button:hover {
+    background: #719b80;
+}
 
-.answer {
+/* Add New Practice Exercise */
+
+.practice-add-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
     background: #eef4f0;
-    border: 2px solid #8caf98;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 25px;
+    border: 3px solid #8caf98;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
-.answer h3 {
+.practice-add-section h2 {
     color: var(--primary-blue);
+    text-align: center;
+    font-size: 26px;
     margin-top: 0;
 }
 
-.answer ul {
+.practice-add-section > p {
     color: var(--primary-blue);
-    line-height: 1.8;
-    padding-left: 22px;
+    text-align: center;
+    line-height: 1.6;
 }
 
-/* Smaller Screens */
+/* Form Layout */
+
+.practice-add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.practice-add-form label {
+    color: var(--primary-blue);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.practice-add-form input,
+.practice-add-form select,
+.practice-add-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 2px solid #8caf98;
+    border-radius: 10px;
+    background: white;
+    color: #344b40;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.practice-add-form textarea {
+    resize: vertical;
+}
+
+.practice-add-form input:focus,
+.practice-add-form select:focus,
+.practice-add-form textarea:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Submit Button */
+
+.practice-submit-button {
+    background: #8caf98;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 14px 25px;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.practice-submit-button:hover {
+    background: #719b80;
+}
+
+.practice-submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Form Messages */
+
+.practice-success {
+    color: #267348;
+    background: #d9eee0;
+    border: 2px solid #8caf98;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.practice-add-form .error-message {
+    color: #a52a2a;
+    background: #fff0f0;
+    border: 2px solid #dba0a0;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Exercise Details Popup */
+
+.practice-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 50, 40, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.practice-modal {
+    position: relative;
+    background: #eef4f0;
+    border: 3px solid #8caf98;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.practice-modal h2,
+.practice-modal h3 {
+    color: var(--primary-blue);
+}
+
+.practice-modal p,
+.practice-modal li {
+    color: #344b40;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.practice-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    color: var(--primary-blue);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.practice-level-label {
+    display: inline-block;
+    background: #8caf98;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Mobile Responsive */
 
 @media (max-width: 800px) {
-    .practice-page {
-        padding: 30px 0 60px;
-    }
-
-    .level-buttons {
-        flex-direction: column;
-    }
-
-    .level-buttons button {
-        width: 100%;
-    }
-
-    .practice-level {
+    .practice-add-section {
         padding: 20px;
+        margin: 35px 10px;
     }
-}
-/* Part 10: React Tooltip */
-.practice-help {
-    color: #49688f;
-    font-weight: bold;
-    cursor: help;
-    text-decoration: underline dotted;
-}
 
-.practice-help:hover {
-    color: #8caf98;
+    .practice-clickable-card {
+        padding: 15px;
+    }
+
+    .practice-modal {
+        padding: 22px;
+    }
+
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
 }
